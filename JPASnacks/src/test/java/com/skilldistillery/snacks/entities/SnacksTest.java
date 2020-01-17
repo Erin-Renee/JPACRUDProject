@@ -41,7 +41,8 @@ class SnacksTest {
 
 	@Test
 	void test() {
-		fail("Not yet implemented");
+		assertNotNull(snacks);
+		assertEquals("Doritos", snacks.getName());
 	}
 
 }
