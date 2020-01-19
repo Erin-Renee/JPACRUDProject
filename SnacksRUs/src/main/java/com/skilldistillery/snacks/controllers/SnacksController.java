@@ -1,5 +1,8 @@
 package com.skilldistillery.snacks.controllers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,17 +19,38 @@ public class SnacksController {
 	private SnacksDAO dao;
 
 	@RequestMapping("/")
-	public String index() {
-
+	public String index(Model model) {
+		List<Snacks> snacks = new ArrayList<>();
+		snacks = dao.findAll();
+		model.addAttribute("snacks", snacks);
+		
 		return "index";
 	}
+	
+	//@RequestMapping(path = "get")
 
-	@RequestMapping(path = "getSnacks.do", method = RequestMethod.GET)
+	@RequestMapping(path = "getSnacksById.do", method = RequestMethod.GET)
 	public String showSnack(@RequestParam Integer id, Model model) {
 
-		Snacks snacks = dao.findSnacksById(id);
-		model.addAttribute("snacks", snacks);
+		Snacks snack = dao.findSnacksById(id);
+		model.addAttribute("snack", snack);
 		return "show";
-
 	}
+		
+		@RequestMapping(path = "create.do", method = RequestMethod.GET)
+		public String createSnack() {
+			return "create";
+		}
+		@RequestMapping(path = "create.do", method = RequestMethod.POST)
+		public String postSnack(Model model, Snacks snack) {
+			snack = dao.create(snack);
+			model.addAttribute("snack", snack);
+			return "create";
+		}
+		@RequestMapping(path = "delete.do", method = RequestMethod.GET)
+		public String deleteSnack(@RequestParam("snackId") int id) {
+			dao.delete(id);
+			return "index";
+		}
+
 }

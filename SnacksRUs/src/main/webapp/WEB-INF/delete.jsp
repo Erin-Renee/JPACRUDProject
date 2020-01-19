@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<a href= "index.jsp" > Return Home </a>
 </body>
 </html>

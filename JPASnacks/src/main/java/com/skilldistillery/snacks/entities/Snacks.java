@@ -18,6 +18,7 @@ public class Snacks {
 	private int calories;
 	private int sodium;
 	private int fats;
+	private int sugars;
 	private int vegan;
 	@Column(name = "contains_nuts")
 	private int containsNuts;
@@ -42,6 +43,21 @@ public class Snacks {
 	}
 	
 
+	public Snacks(int id, String name, String description, String category, int calories, int sodium, int fats,
+			int sugars, int vegan, int containsNuts) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.description = description;
+		this.category = category;
+		this.calories = calories;
+		this.sodium = sodium;
+		this.fats = fats;
+		this.sugars = sugars;
+		this.vegan = vegan;
+		this.containsNuts = containsNuts;
+	}
+	
 
 	public String getDescription() {
 		return description;
@@ -102,8 +118,16 @@ public class Snacks {
 	@Override
 	public String toString() {
 		return "Snacks [id=" + id + ", name=" + name + ", description=" + description + ", category=" + category
-				+ ", calories=" + calories + ", sodium=" + sodium + ", fats=" + fats + ", vegan=" + vegan
-				+ ", containsNuts=" + containsNuts + "]";
+				+ ", calories=" + calories + ", sodium=" + sodium + ", fats=" + fats + ", sugars=" + sugars + ", vegan="
+				+ vegan + ", containsNuts=" + containsNuts + "]";
+	}
+
+	public int getSugars() {
+		return sugars;
+	}
+
+	public void setSugars(int sugars) {
+		this.sugars = sugars;
 	}
 
 	
