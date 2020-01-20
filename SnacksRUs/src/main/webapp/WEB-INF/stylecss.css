@@ -1,0 +1,12 @@
+@charset "UTF-8";
+#cover {
+	background: #222 url('https://www.pennmedicine.org/-/media/images/miscellaneous/food%20and%20drink/bananas_pink_background.ashx?mw=620&mh=408') center
+	center no-repeat;
+	background-size: cover;
+	height: 100%;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	position: relative;
+	
+}
