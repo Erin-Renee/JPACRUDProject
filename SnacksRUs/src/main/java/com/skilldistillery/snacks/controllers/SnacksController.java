@@ -62,7 +62,6 @@ public class SnacksController {
 				return "redirect:index.do";
 				
 			}else {
-//				model.addAttribute("snack", snack);
 				return "redirect:index.do";
 			}
 		}

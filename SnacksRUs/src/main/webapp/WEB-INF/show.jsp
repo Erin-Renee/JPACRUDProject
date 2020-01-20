@@ -8,7 +8,7 @@
 <jsp:include page="topstyle.jsp"></jsp:include>
 </head>
 <body>
-	<h1> Snacks shown here!</h1>
+	<h1> Snacks</h1>
 	<div>
   <h5>Snack: ${snack.name}</h5><br>
   <p>ID: ${snack.id}</p>

@@ -1,5 +1,7 @@
 ## Spring MVC Snack C.R.U.D. Project
 
+##Erin Eustice
+
 ### Objectives
 
 The objectives for this project was to create a CRUD application from scratch. The goal for this project is to get comfortable with building a web application with SpringMVC.
@@ -24,6 +26,4 @@ The objectives for this project was to create a CRUD application from scratch. T
 
 ### Lesson Learned
 
-I learned how to create, read, update AND delete from the database. I found it tricky to
-
- 
+I learned how to create, read, update AND delete from the database. I found it tricky to get the update portion working correctly. I decided to make two methods for it in the controller
