@@ -18,7 +18,7 @@ public class SnacksController {
 	@Autowired
 	private SnacksDAO dao;
 
-	@RequestMapping("/")
+	@RequestMapping({"/", "index.do"})
 	public String index(Model model) {
 		List<Snacks> snacks = new ArrayList<>();
 		snacks = dao.findAll();
@@ -47,10 +47,32 @@ public class SnacksController {
 			model.addAttribute("snack", snack);
 			return "create";
 		}
+		@RequestMapping(path = "update.do")
+		public String updateSnack(Model model, Snacks snack,@RequestParam("snackId") Integer id) {
+			snack =dao.findSnacksById(id);
+			//dao.update(id, snack);
+			model.addAttribute("snack", snack);
+			return "update";
+		}
+		@RequestMapping(path = "edit.do")
+		public String editSnack(Model model, Snacks snack,@RequestParam("snackId") Integer id) {
+			
+			dao.update(id, snack);
+			if(snack==null) {
+				return "redirect:index.do";
+				
+			}else {
+//				model.addAttribute("snack", snack);
+				return "redirect:index.do";
+			}
+		}
+		
+		
+		
 		@RequestMapping(path = "delete.do", method = RequestMethod.GET)
 		public String deleteSnack(@RequestParam("snackId") int id) {
 			dao.delete(id);
-			return "index";
+			return "redirect:index.do";
 		}
 
 }

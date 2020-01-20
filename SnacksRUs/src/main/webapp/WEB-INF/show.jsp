@@ -26,6 +26,10 @@
    <input type="hidden" name="snackId" value="${snack.id}" />
   <input type="submit" name = "delete" value="Delete" />
 </form>
+<form action="update.do" method="GET">
+   <input type="hidden" name="snackId" value="${snack.id}" />
+  <input type="submit" name = "update" value="update" />
+</form>
 
 <a href= "/" > Return Home </a>
 <jsp:include page="bottomstyle.jsp"></jsp:include>

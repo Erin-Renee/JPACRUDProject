@@ -18,13 +18,13 @@
 <form action="create.do">
 <input type = "submit" value= "Create Snack"/>
 </form>
-<c:forEach var="snacks" items="${snacks}">
+ <c:forEach var="snacks" items="${snacks}">
 <li>
 <a href= "getSnacksById.do?id=${snacks.id}">${snacks.name}</a>
 </li>
 
 
-</c:forEach>
+</c:forEach> 
 <a href= "/" > Show Snack List </a>
 
 <jsp:include page="bottomstyle.jsp"></jsp:include>
